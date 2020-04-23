@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>VideojsDemo</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="one.js"></script>
+
+
+
+
+    <!--Link for video.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.4.1/video.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.4.1/video-js.css" rel="stylesheet" type="text/css" />
+	  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+	
+     <!--playlist-->
+	<!--<link href="//www.domain.com/videojs/css/videojs.min.css" rel="stylesheet">-->
+
+	
+
+	<!--<script src="http://www.domain.com/videojs/video.min.js"></script>
+	<script src="http://www.domain.com/videojs/nuevo.min.js"></script>-->
+    <!--markers-->
+    <!--<link href ="https://cdnjs.cloudflare.com/ajax/libs/videojs-markers/0.7.0/videojs.markers.css" rel="stylesheet">
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/videojs-markers/0.7.0/videojs-markers.js"></script>
+		<script src="http://code.jquery.com/jquery-2.0.3.min.js"> </script>-->
+    <!--thumbnail-->
+    <!--<link href="videojs.chapter-thumbnails.css" rel="stylesheet">
+		<script src="videojs.chapter-thumbnails.js"></script>-->
+    <!--Dash.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/2.9.2/dash.all.min.js"></script>
+
+    <!--Transcripts-->
+    <!--<script src="dist/videojs-transcript.js"></script>-->
+    <link href="./assets/css/videojs-transcript.css" title="Example 1">
+	<!--<link rel="stylesheet" href="css/videojs-transcript.css">-->
+
+    <link href="./assets/css/videojs-transcript2.css" title="Example 2">
+    <link href="./assets/css/videojs-transcript3.css" title="Example 3">
+	    <link href="./assets/css/main.css" title="main">    
+		<link href="./assets/css/videojs-vjsdownload.css" title="vj 1">
+		    <link href="./assets/css/videojs-seek-buttons.css" title="vj 2">
+
+
+		
+
+	<script src="./assets/js/videojs-transcript.js"></script>
+
+
+    <!-- videojs-contrib-dash script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-dash/2.10.1/videojs-dash.min.js"></script>
+   <!-- <script src="../node_modules/videojs-vjsdownload/dist/videojs-vjsdownload.js"></script> --> 
+	
+	    <script src="./assets/js/videojs-vjsdownload.js"></script>
+			    <script src="./assets/js/videojs-seek-buttons.js"></script>
+							    <script src="./assets/js/videojs-seek-buttons.min.js"></script>
+
+
+
+    <!--<link href="../node_modules/videojs-vjsdownload/dist/videojs-vjsdownload.css"  type="text/css" />-->
+    <!--<script src="../node_modules/videojs-seek-buttons/dist/videojs-seek-buttons.min.js"></script>-->
+   <!-- <link href="../node_modules/videojs-seek-buttons/dist/videojs-seek-buttons.css"  type="text/css" />-->
+	<!--<script src="script.js"></script>-->
+
+
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/sticky-footer-navbar.css"
+        rel="stylesheet">
+
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">
+            <img src="cisco.png" width="60" height="30" class="d-inline-block align-top" alt="cisco">
+            <span style="margin: 0 10px; font-weight: 500;">
+                VideoJS
+            </span>
+        </a>
+    </nav>
+    <!-- <div class="header">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ8AAAC6CAMAAACHgTh+AAAAaVBMVEX///8VSV0APFMRR1wAPlSwu8EZTWGjsLcDRlsAMUsAQVYANE2GmaKQoalJanm7xcpyiJPw8/UAOFDQ19sALUg8YXHY3uHm6uzDy8+2wcZadoN5jphpgY0rVmjO1dgzW2yZqLDg5OdXdIGGppaWAAADJklEQVR4nO3bW5OiMBCGYTmMksQTBxEFR93//yNXga3ajqTKKZMdt+Z9LvuiTb5iFNLMbAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+EnypvkM1rxsmjxY8yAOpojNOdCidyYu1EeY3mHUVXSjz0Ga7/Std1KVQZqH0d2XHEUmxJ9Mafre2TFA71DmSb/meBGg90fc906yAL1DGfNIA+YRkceAPCTykMhDIg+JPCTykMhDIg+JPKQ3z6Npu8ddO/Ool91q/3TvfNUta7vozmPRtc3TvQPpjNaxtrfoyuNSaZ2qZxf9qVKtq4tVdeWxv61Dm29+6l0U/dJOVtmRR9kfi0TquXOifHiwr6xDA1cep+xeLS5fWb5348ZNOVm289jqr3ytjBvX28mynUdt3uEYQA1rizey7MhjnQ07XD7Ve5UO+17LsiOPzVhWX9yBX0Hz0OTxN/KQyEMiD4k8pHfPI5+40faWx0Rvb3nsQ8wJy5My2cauespjq4za2kVPeWwio07eh3llld2HhPbU1E8eu/te4p1V9ZPHoUpCTDd3w1Ziq+wlj0P/EBQVB1n2k8d4k2uH/apx40U9WX4tj3bYuG5l2UseVxPka3Z81owK67rzksf4mGc/uHnJox6uvcj4/U4lD4k8JPKQyEMiD4k8JPKQXHlUPzSPPxeCucqyHmOyZgKOPMbXDtOLLC/1ZEyL4VZbWyMVRx6f48YLWd6ryZheduzXnMyt8nJYs/1Y48jjME5UrFDLYc3KCnU/XHz2Y41r/pL2n5laN/2zUzIV6styffs8rR6mh/P4Vq7siZtrPncskihTK7tJa25lY+9kdlFZlBS/rKorj6bSUZJGdpNa3cup9yOQvE10N3Fqs5zr42NKrvnt4qzXD4cotz3u4t3EC9jNWp8fWjjnt/VRz6dOmjqdtN/8uvsPnu9PIg+JPCTykE7/4H1++6f/nY0ngI8/zx5c1eTd7Fvbq/udeRzmZZ3ufoEk6vnXrt7AdW7ix4mKJ62Ki3mISy+k8iPcPVB++J/+WQwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4MFvOFwx5pQIvu4AAAAASUVORK5CYII="
+            alt="logo" />
+        <h1 class="logo">Video Player</h1>
+    </div>
+    <div class="footer">
+        <p>Cisco.com There's never been a better time</p>
+    </div> -->
+    <div class="bg">
+
+        <main class='main'>
+            <section>
+                <video width=700 height=350 id=myvideo align="right" class="video-js vjs-default-skin vjs-big-play-centered"
+                    data-setup='{"playbackRates": [0.5, 1, 1.5, 2], "controls":true, "autoplay":false, "preload": "auto"}'>
+                    <source id='source' src="" type="application/dash+xml">
+
+                    <!--	<track src="" label="English subtitles" kind="subtitles" srclang="en" default="en"></track><!--Add subtitles link in the src option-->
+                    <track id='subtitle' src="" label="English subtitles" kind="subtitles" srclang="en"
+                        default="en">
+                    </track>
+                    <!--Add subtitles link in the src option-->
+
+                </video></section>
+            <!--<div id="transcript"></div>-->
+            <section class="vidBox">
+                <div id="transcript" class="box">
+					<div style="padding: 5px;" class="d-flex justify-content-center">																								
+                        <input type="text" name="search" id="myInput" align="right" autocomplete="off"
+                        onkeyup="myFunction()" placeholder="Search " title="search">
+					</div>										   
+                </div>
+            </section>
+        </main>
+
+        <br>
+        <!--<button type="button" id="btnBookmark" class="btn btn-info" >Add Bookmark</button>-->
+        <a id="btnBookmark" class="button yahoo">Add Bookmark</a>
+        <!--<button type="button" id="btnListCues" class="btn btn-success">List Bookmarks</button>-->
+        <a id="btnListCues" class="button devart">List Bookmarks</a>
+        <div id='divBookmarks' style="margin: 0 0 30px 20px;"></div>
+        <div class="topnav">
+        </div>
+        </br>
+							   
+
+
+    </div>
+
+    <footer class="footer">
+        <div class="d-flex justify-content-center">
+            <span class="text-muted">Cisco.com</span>
+        </div>
+    </footer>
+
+
+<script>
+	  var source = getUrlVars()['name'];
+		document.getElementById('source').src='./assets/videos/dummy/'+source+'/'+source+'.mpd';
+	var subtitle = getUrlVars()['name'];
+		document.getElementById('subtitle').src='./assets/videos/dummy/'+source+'/'+source+'.vtt';
+	
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+        //var mpdfile = "http://localhost:8888/videos/crypto.mpd" ;
+        var video = document.getElementById('myvideo');
+        var player = videojs(document.querySelector('.video-js'), {
+
+            //html5: {
+
+            //      nativeCaptions: false
+            //}
+            plugins: {
+                vjsdownload: {
+                    beforeElement: 'playbackRateMenuButton',
+                    textControl: 'Download video',
+                    name: 'downloadButton',
+                    //downloadURL: 'http://localhost:8888/videos/video2/elephants-video.mp4'
+                    downloadURL: './assets/videos/dummy/'+source+'/'+source+'.mp4'
+                }
+            }
+        }, function () {
+            console.log('Callback video-js initiated');
+            this.on('downloadvideo', function () {
+                console.log('downloadvideo triggered');
+            });
+        });
+        player.ready(function () {
+            //player.src({
+                //src: './videos/lunch_scene.mp4',
+                //src: './videos/dummy/crypto.mpd',
+              //  src: './videos/dummy/ml.mpd',
+                //type: 'video/mp4'
+                //type : 'application/dash+xml'
+
+            //}
+			//);
+            var options = {};
+
+
+            // fire up the plugin
+            var transcript = player.transcript(options);
+            var transcriptContainer = document.querySelector('#transcript');
+            transcriptContainer.appendChild(transcript.el());
+
+        });
+		player.seekButtons({
+            forward: 10,
+            back: 10
+        });
+        //player.src({ src: '.mpd source file location', type: 'application/dash+xml'});
+		
+        var newTextTrack;
+
+        //chapter bookmark code
+        newTextTrack = video.addTextTrack('chapters', 'bookmarks');
+        newTextTrack.default = true;
+        // Set the bookmark button click handlers.
+
+        // Set the bookmark button click handlers.
+
+        var btnBookmark = document.getElementById('btnBookmark');
+        btnBookmark.addEventListener('click', createCue);
+
+        var btnListCues = document.getElementById('btnListCues');
+        btnListCues.addEventListener('click', listCues);
+
+
+        // Create a new chapter cue.
+        function createCue() {
+
+            console.log("Creating cue: " + video.currentTime + " | " + newTextTrack.cues.length);
+
+            // Create the new cue with the current vide time.
+            //var newCue = new TextTrackCue(video.currentTime, video.currentTime);
+            //var newCue = new TextTrackCue(video.currentTime);
+            var newCue = new VTTCue(video.currentTime, video.currentTime, 'test');
+
+            newCue.id = 'bookmark' + newTextTrack.cues.length;
+            newCue.pauseOnExit = false;
+
+            // Add the cue to the text track.
+            newTextTrack.addCue(newCue);
+
+            // Display the new cue / bookmark in the list and create actionable button.
+            var divBookmarks = document.getElementById('divBookmarks');
+            //divBookmarks.innerHTML = divBookmarks.innerHTML + '<br/><button id="'+newCue.id+'" onclick="goToCue('+newCue.startTime+')">' + newCue.startTime +'</button>';
+            divBookmarks.innerHTML = divBookmarks.innerHTML + '<br><a id="' + newCue.id +
+                '" class="button twitter" onclick="goToCue(' + newCue.startTime + ')" >' + newCue.startTime + '</a>';
+        }
+        //'<br><a id="'+newCue.id+'" class="button yahoo" onclick="goToCue('+newCue.startTime+')" >'+ newCue.startTime +'</a>';
+        // List out the present cues to the console.
+        function listCues() {
+
+            console.log("Number of cues: " + newTextTrack.cues.length);
+
+            var activeCue;
+
+            // Loop through the active cues and display in console.
+            for (var i = 0; i < newTextTrack.cues.length; i++) {
+                activeCue = newTextTrack.cues[i];
+                console.log(activeCue.id);
+                console.log(activeCue.startTime);
+                console.log(activeCue.endTime);
+                console.log(activeCue.text);
+                console.log(" ");
+            }
+        }
+        // Move video to time for a specific bookmark / cue.
+        //place for gotocue
+
+
+        function goToCue(startTime) {
+
+            // Move video.
+            video.currentTime = startTime;
+        }
+        
+   
+        function myFunction() {
+            var input, filter, ol, lio, a11, a1, a, li, txtValue;
+            input = document.getElementById("myInput").value;
+            filter = input.toUpperCase();
+            ol = document.getElementsByClassName("transcript-body")[0];
+            lio = ol.getElementsByClassName("transcript-line");
+
+            for (i = 0; i < lio.length; i++) {
+                a1 = ol.getElementsByClassName("transcript-line")[i];
+
+                a = a1.getElementsByClassName("transcript-text")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    var pattern = new RegExp("(" + input + ")", "gi");
+                    var new_text = txtValue.replace(pattern, "<span class='highlight'>" + input + "</span>");
+                    a1.getElementsByClassName("transcript-text")[0].innerHTML = new_text;
+                    a1.style.display = "";
+                } else {
+                    a1.style.display = "none";
+                }
+            }
+        }
+		
+</script>
+  <app-root></app-root>
+</body>
+</html>
